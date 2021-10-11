@@ -12,7 +12,7 @@ class Search {
 
     @SerializedName("results")
     @Expose
-    var results: List<Result>? = null
+    var results: ArrayList<Result>? = null
 }
 
 class Result {

@@ -9,7 +9,7 @@ import retrofit2.http.GET
 interface IServices {
 
     @GET("search")
-    suspend fun search() : Search
+    suspend fun search() : Response<Search>
 
     companion object {
         var retrofitService: IServices? = null
