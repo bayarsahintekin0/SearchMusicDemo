@@ -12,6 +12,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.text.input.TextFieldValue
 import com.bayarsahintekin.searchmusicdemo.ui.app.MainScreen
 import com.bayarsahintekin.searchmusicdemo.ui.app.SearchList
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val mainViewModel by viewModels<MainViewModel>()
 
 
+    @ExperimentalComposeUiApi
     @ExperimentalFoundationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @ExperimentalComposeUiApi
     @ExperimentalFoundationApi
     @Composable
     fun appDesign() {
@@ -43,9 +46,7 @@ class MainActivity : AppCompatActivity() {
                 Surface (color = MaterialTheme.colors.background ){
                     val textState = remember { mutableStateOf(TextFieldValue("")) }
                     Column {
-                        SearchView(state = textState)
-                        mainViewModel.search(textState.value.text)
-
+                        SearchView(state = textState,mainViewModel = mainViewModel)
                         SearchList(mainViewModel = mainViewModel)
                     }
                 }

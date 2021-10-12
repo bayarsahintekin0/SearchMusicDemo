@@ -17,6 +17,7 @@ class MainViewModel: ViewModel() {
     private lateinit var repository: SearchRepository
     var searchResult: List<Result>? by mutableStateOf(listOf())
     lateinit var clickedItem: Result
+    private val query = mutableStateOf("")
 
     fun search(text :String){
         repository = SearchRepository(apiService)
@@ -29,6 +30,10 @@ class MainViewModel: ViewModel() {
             }
         }
 
+    }
+
+    fun onQueryChanged(query: String){
+        this.query.value = query
     }
 
     fun itemClicked(item: Result) {
