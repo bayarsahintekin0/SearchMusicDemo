@@ -17,12 +17,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.bayarsahintekin.searchmusicdemo.data.model.Result
 import com.bayarsahintekin.searchmusicdemo.ui.viewmodel.MainViewModel
-import androidx.compose.material.Card
-import androidx.compose.runtime.MutableState
-import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import com.bayarsahintekin.searchmusicdemo.MainActivity
+
 
 
 @ExperimentalFoundationApi

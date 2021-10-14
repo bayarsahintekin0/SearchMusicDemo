@@ -16,11 +16,7 @@ import com.bayarsahintekin.searchmusicdemo.data.model.Result
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.bayarsahintekin.searchmusicdemo.ui.theme.Purple200
 import com.bayarsahintekin.searchmusicdemo.ui.theme.Purple500
-import com.bayarsahintekin.searchmusicdemo.ui.theme.Purple700
 
 
 @Composable

@@ -1,23 +1,29 @@
 package com.bayarsahintekin.searchmusicdemo.ui.viewmodel
 
+import android.util.Log
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayarsahintekin.searchmusicdemo.data.model.Result
 import com.bayarsahintekin.searchmusicdemo.data.network.IServices
 import com.bayarsahintekin.searchmusicdemo.data.repository.SearchRepository
+import com.bayarsahintekin.searchmusicdemo.ui.app.SearchEvent
+import com.bayarsahintekin.searchmusicdemo.ui.app.TabCategory
+import com.bayarsahintekin.searchmusicdemo.ui.app.getCategory
 import kotlinx.coroutines.*
 
 class MainViewModel: ViewModel() {
+    val TAG = "MainViewModel"
     private val apiService = IServices.getInstance()
     private lateinit var repository: SearchRepository
     var searchResult: List<Result>? by mutableStateOf(listOf())
-    lateinit var clickedItem: Result
-    private val query = mutableStateOf("")
+
+    val selectedCategory: MutableState<TabCategory> = mutableStateOf(TabCategory.MOVIES)
 
     fun search(text :String){
         repository = SearchRepository(apiService)
@@ -32,11 +38,8 @@ class MainViewModel: ViewModel() {
 
     }
 
-    fun onQueryChanged(query: String){
-        this.query.value = query
+    fun setSelectedCategory(category: TabCategory){
+        selectedCategory.value = category
     }
 
-    fun itemClicked(item: Result) {
-        clickedItem = item
-    }
 }
