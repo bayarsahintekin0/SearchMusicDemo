@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 Surface (color = MaterialTheme.colors.background ){
                     val textState = remember { mutableStateOf(TextFieldValue("")) }
                     Column {
-                        SearchView(state = textState,mainViewModel = mainViewModel)
+                        SearchView(state = textState,mainViewModel = mainViewModel,mainViewModel.selectedCategory.value.title)
                         TabView(categories = getCategories(),
                             selectedCategory = mainViewModel.selectedCategory.value, onSelectedCategoryChanged = {
                                 mainViewModel.setSelectedCategory(getCategory(it))

@@ -1,10 +1,10 @@
 package com.bayarsahintekin.searchmusicdemo.ui.app
 
-enum class TabCategory(val value: String){
-    MOVIES("Movies"),
-    MUSIC("Music"),
-    APPS("Apps"),
-    BOOKS("Books")
+enum class TabCategory(val title:String ,val value: String){
+    MOVIES("movie","Movies"),
+    MUSIC("music","Music"),
+    APPS("software","Apps"),
+    BOOKS("ebook","Books")
 }
 
 fun getCategories(): List<TabCategory>{

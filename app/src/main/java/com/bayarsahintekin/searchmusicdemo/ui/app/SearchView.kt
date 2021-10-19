@@ -38,7 +38,7 @@ import kotlinx.coroutines.NonDisposableHandle.parent
 @ExperimentalFoundationApi
 @ExperimentalComposeUiApi
 @Composable
-fun SearchView(state: MutableState<TextFieldValue> ,mainViewModel: MainViewModel) {
+fun SearchView(state: MutableState<TextFieldValue> ,mainViewModel: MainViewModel, mediaType: String?) {
     val keyboardController = LocalSoftwareKeyboardController.current
 
     Card( modifier = Modifier
@@ -87,7 +87,7 @@ fun SearchView(state: MutableState<TextFieldValue> ,mainViewModel: MainViewModel
             keyboardActions = KeyboardActions(
                 onDone = {
                     keyboardController?.hide()
-                    mainViewModel.search(text = state.value.text)
+                    mainViewModel.search(text = state.value.text,category = mediaType)
                 }
             ),
             singleLine = true,

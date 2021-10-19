@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface IServices {
 
     @GET("search")
-    suspend fun search(@Query("term") term :String) : Response<Search>
+    suspend fun search(@Query("term") term :String, @Query("media") mediaType :String? = null) : Response<Search>
 
     companion object {
         var retrofitService: IServices? = null

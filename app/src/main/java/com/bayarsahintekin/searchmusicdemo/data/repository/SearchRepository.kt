@@ -7,7 +7,7 @@ import retrofit2.Response
 
 class SearchRepository(val service: IServices) {
 
-    suspend fun search(term: String) :Response<Search>{
-        return service.search(term)
+    suspend fun search(term: String, category :String) :Response<Search>{
+        return service.search(term,category)
     }
 }

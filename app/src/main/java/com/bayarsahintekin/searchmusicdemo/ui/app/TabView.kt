@@ -37,7 +37,7 @@ fun TabView(categories: List<TabCategory>,
         contentPadding = PaddingValues(8.dp)
     ) {
         items(categories) {
-            TabItem(category = it.value,isSelected = it == selectedCategory , onSelectedCategoryChanged = onSelectedCategoryChanged )
+            TabItem(category = it,isSelected = it == selectedCategory , onSelectedCategoryChanged = onSelectedCategoryChanged )
         }
     }
 
